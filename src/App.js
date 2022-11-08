@@ -1,23 +1,18 @@
-import React from "react";
+import * as React from "react";
+import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import Main from "./components/Main/Main";
-import GymProgram from "./components/GymProgram/GymProgram";
-import Member from "./components/Member/Member";
-import Classes from "./components/OurClasses/Classes";
-import Schedule from "./components/Schedule/Schedule";
-import Trainers from "./components/Trainers/Trainers";
-import Contact from './components/Contact/Contact';
-
-const App = () => (
-  <div className="App">
-    <Main />
-    <GymProgram />
-    <Member />
-    <Classes />
-    <Schedule />
-    <Trainers />
-    <Contact />
-  </div>
-);
-
+import SignInSide from "./Login";
+import Main from "./Main";
+import SignUp from "./Register";
+function App() {
+  return (
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<SignInSide />} />
+        <Route path="main" element={<Main />} />
+        <Route path="Register" element={<SignUp />} />
+      </Routes>
+    </div>
+  );
+}
 export default App;
